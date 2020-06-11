@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { Typography, makeStyles } from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     
  const Message = (props) =>{
     const classes = useStyles();
-     const { userName, text, date} = props.data;
+     const { userName, text} = props.data;
     return (
         <div className={classes.container}>
             <Typography color="secondary">{userName}</Typography>

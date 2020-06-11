@@ -2,32 +2,35 @@ import React, { useState } from 'react';
 import { ThemeContext } from '../contexts/ThemeContext';
 import { TextField, Button, makeStyles } from '@material-ui/core';
 
-
-
 const useStyles = makeStyles((theme) => ({
-  container:{
-  },
+  container: {},
   btn: {
     width: '100%',
     marginTop: 10,
     background: 'green',
     fontWeight: 'bold',
-    border: '2px solid'
+    border: '2px solid',
   },
   text: {
-    width: '100%'
-  }
+    width: '100%',
+  },
 }));
-
 
 function Form() {
   const classes = useStyles();
   const [text, setText] = useState('');
+  const [isDisable, setDisable] = useState(false);
 
   // Event
   const onTyping = (event) => {
     const { value } = event.target;
-    setText(value);
+    if(value.length > 140){
+      setDisable(true)
+    }
+    else if(isDisable){
+      setDisable(false)
+    }
+    setText(value)
   };
 
   const onSend = (addMsg, appState) => {
@@ -46,16 +49,22 @@ function Form() {
         return (
           <div className={classes.container}>
             <TextField
-              className= {classes.text}
+              className={classes.text}
               onChange={onTyping}
               value={text}
-              id="outlined-multiline-static"
+              id='outlined-multiline-static'
               label='Type Here'
               multiline
               rows={4}
-              variant="outlined"
+              variant='outlined'
             />
-            <Button className={classes.btn} onClick={() => onSend(addMsg, appState)}>Send</Button>
+            <Button
+              className={classes.btn}
+              onClick={() => onSend(addMsg, appState)}
+              disabled={isDisable}
+            >
+              Send
+            </Button>
           </div>
         );
       }}

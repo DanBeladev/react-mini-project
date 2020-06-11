@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import MessageList from './MessageList';
 import Form from './Form';
 import { Grid, makeStyles } from '@material-ui/core';

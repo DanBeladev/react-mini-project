@@ -1,8 +1,7 @@
 import React from 'react';
-import { makeStyles, Container } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core';
 import { ThemeContext } from '../contexts/ThemeContext';
 import Message from './Message';
-// import { red } from '@material-ui/core/colors';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -22,12 +21,10 @@ const MessageList = () => {
   return (
     <ThemeContext.Consumer>
       {({ appState }) => (
-        // <Container className={classes.root} fixed maxWidth="sm">
         <div className={classes.root}>
-          {appState.messages.map((msg) => (
-            <Message key={msg.date} data={msg} />
+          {appState.messages.map((msg,index) => (
+            <Message key={index} data={msg} />
           ))}
-          {/* //    </Container> */}
         </div>
       )}
     </ThemeContext.Consumer>
