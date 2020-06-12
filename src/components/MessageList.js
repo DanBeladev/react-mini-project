@@ -1,13 +1,14 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core';
-import { ThemeContext } from '../contexts/ThemeContext';
+import { AppContext } from '../contexts/AppContext';
 import Message from './Message';
+import './MessageList.css'
 
 const useStyles = makeStyles((theme) => ({
   root: {
     padding:10,
-    width: 600,    
-    maxHeight: 600,
+    width: 1000,    
+    height: 500,
     background: '#ece5dd',
     overflow:'scroll',
     overflowX: 'hidden',
@@ -19,15 +20,15 @@ const MessageList = () => {
   const classes = useStyles();
 
   return (
-    <ThemeContext.Consumer>
+    <AppContext.Consumer>
       {({ appState }) => (
-        <div className={classes.root}>
+        <div id="container" className={classes.root}>
           {appState.messages.map((msg,index) => (
             <Message key={index} data={msg} />
           ))}
         </div>
       )}
-    </ThemeContext.Consumer>
+    </AppContext.Consumer>
   );
 };
 

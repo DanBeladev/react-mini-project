@@ -1,8 +1,8 @@
 import React, { createContext, useState } from 'react';
 
-export const ThemeContext = createContext();
+export const AppContext = createContext();
 
-const ThemeContextProvider = (props) => {
+const AppContextProvider = (props) => {
   const [appState, setAppState] = useState({
     messages: [],
     userName: 'Eli Copter',
@@ -23,10 +23,10 @@ const ThemeContextProvider = (props) => {
   };
 
   return (
-    <ThemeContext.Provider value={{ appState, addMsg, changeUserName }}>
+    <AppContext.Provider value={{ appState, addMsg, changeUserName }}>
       {props.children}
-    </ThemeContext.Provider>
+    </AppContext.Provider>
   );
 };
 
-export default ThemeContextProvider;
+export default AppContextProvider;

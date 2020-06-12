@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
-import { ThemeContext } from '../contexts/ThemeContext';
+import { AppContext } from '../contexts/AppContext';
 import { TextField, Button, makeStyles } from '@material-ui/core';
+import M from 'materialize-css/dist/js/materialize.min.js';
 
 const useStyles = makeStyles((theme) => ({
-  container: {},
+  container: {
+    width:'100%'
+  },
   btn: {
     width: '100%',
     marginTop: 10,
@@ -34,7 +37,8 @@ function Form() {
   };
 
   const onSend = (addMsg, appState) => {
-    if(!isDisable){
+    if(!isDisable && text.length!==0){
+      console.log(text.length);
       const newMessage = {
         userName: appState.userName,
         text: text,
@@ -43,10 +47,13 @@ function Form() {
       addMsg(newMessage);
       setText('');
     }
+    else if(text.length===0){
+      M.toast({html: 'Unable to send blank messages'});
+    }
   };
 
   return (
-    <ThemeContext.Consumer>
+    <AppContext.Consumer>
       {({ appState, addMsg }) => {
         return (
           <div className={classes.container}>
@@ -70,7 +77,7 @@ function Form() {
           </div>
         );
       }}
-    </ThemeContext.Consumer>
+    </AppContext.Consumer>
   );
 }
 

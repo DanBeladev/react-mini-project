@@ -5,16 +5,18 @@ import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import { Button, TextField } from '@material-ui/core';
-import { ThemeContext } from '../contexts/ThemeContext';
+import { AppContext } from '../contexts/AppContext';
+import M from 'materialize-css/dist/js/materialize.min.js';
+import './Profile.css'
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 600,
+    width: '25%',
+    height:360,
     background: 'aliceblue',
-    maxHeight: 350,
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'baseline',
+    alignItems: 'center',
     justifyContent: 'space-around',
   },
 }));
@@ -33,17 +35,19 @@ const Profile = () => {
     if (userName !== '') {
       changeUserName(userName);
       setUserName('');
-      
+      M.toast({html: 'User name changed successfully'});
     } else {
-      console.log('empty string');
+      M.toast({html: 'User name must be non-empty'});
+      
     }
   };
 
   return (
-    <ThemeContext.Consumer>
+    <AppContext.Consumer>
       {({ appState, changeUserName }) => (
         <Card className={classes.root}>
           <CardHeader
+          color="orange"
             title={`${appState.userName} Profile`}
             subheader='Edit profile name here'
           />
@@ -67,7 +71,7 @@ const Profile = () => {
           </CardActions>
         </Card>
       )}
-    </ThemeContext.Consumer>
+    </AppContext.Consumer>
   );
 };
 

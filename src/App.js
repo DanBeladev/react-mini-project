@@ -8,13 +8,15 @@ import AppNavBar from './components/AppNavBar';
 import Home from './components/Home';
 import Profile from './components/Profile';
 import { ROOT_ROUTE, HOME_ROUTE, PROFILE_ROUTE } from './constants';
-import ThemeContextProvider  from './contexts/ThemeContext';
+import AppContextProvider  from './contexts/AppContext';
 
 const useStyles = makeStyles((theme) => ({
   appContent: {
     padding: 30,
     height: '100%',
     width: '100%',
+    display: 'flex',
+    justifyContent: 'center'
   },
 }));
 
@@ -26,7 +28,7 @@ function App() {
 
   return (
     <Fragment>
-      <ThemeContextProvider>
+      <AppContextProvider>
         <BrowserRouter>
           <AppNavBar />
           <Box className={classes.appContent}>
@@ -43,7 +45,7 @@ function App() {
             </Switch>
           </Box>
         </BrowserRouter>
-      </ThemeContextProvider>
+      </AppContextProvider>
     </Fragment>
   );
 }
