@@ -33,6 +33,7 @@ const Profile = () => {
     if (userName !== '') {
       changeUserName(userName);
       setUserName('');
+      
     } else {
       console.log('empty string');
     }

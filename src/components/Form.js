@@ -34,13 +34,15 @@ function Form() {
   };
 
   const onSend = (addMsg, appState) => {
-    const newMessage = {
-      userName: appState.userName,
-      text: text,
-      date: new Date(),
-    };
-    addMsg(newMessage);
-    setText('');
+    if(!isDisable){
+      const newMessage = {
+        userName: appState.userName,
+        text: text,
+        date: new Date(),
+      };
+      addMsg(newMessage);
+      setText('');
+    }
   };
 
   return (

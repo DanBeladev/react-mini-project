@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
     padding:10,
     width: 600,    
     maxHeight: 600,
-    background: 'gray',
+    background: '#ece5dd',
     overflow:'scroll',
     overflowX: 'hidden',
     border: '4px solid black',
