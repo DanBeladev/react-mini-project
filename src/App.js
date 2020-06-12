@@ -8,7 +8,7 @@ import AppNavBar from './components/AppNavBar';
 import Home from './components/Home';
 import Profile from './components/Profile';
 import { ROOT_ROUTE, HOME_ROUTE, PROFILE_ROUTE } from './constants';
-import AppContextProvider  from './contexts/AppContext';
+import AppContextProvider from './contexts/AppContext';
 
 const useStyles = makeStyles((theme) => ({
   appContent: {
@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     height: '100%',
     width: '100%',
     display: 'flex',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
 }));
 

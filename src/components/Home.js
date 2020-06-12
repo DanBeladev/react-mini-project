@@ -7,9 +7,9 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
-  form:{
-    width: '100%'
-  }
+  form: {
+    width: '100%',
+  },
 }));
 function Home() {
   const classes = useStyles();
@@ -25,7 +25,7 @@ function Home() {
         <Grid item xs={12}>
           <MessageList />
         </Grid>
-        <Grid className= {classes.form} item xs={6}>
+        <Grid className={classes.form} item xs={6}>
           <Form />
         </Grid>
       </Grid>

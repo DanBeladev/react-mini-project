@@ -5,7 +5,7 @@ import M from 'materialize-css/dist/js/materialize.min.js';
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    width:'100%'
+    width: '100%',
   },
   btn: {
     width: '100%',
@@ -27,18 +27,16 @@ function Form() {
   // Event
   const onTyping = (event) => {
     const { value } = event.target;
-    if(value.length > 140){
-      setDisable(true)
+    if (value.length > 140) {
+      setDisable(true);
+    } else if (isDisable) {
+      setDisable(false);
     }
-    else if(isDisable){
-      setDisable(false)
-    }
-    setText(value)
+    setText(value);
   };
 
   const onSend = (addMsg, appState) => {
-    if(!isDisable && text.length!==0){
-      console.log(text.length);
+    if (!isDisable && text.length !== 0) {
       const newMessage = {
         userName: appState.userName,
         text: text,
@@ -46,9 +44,8 @@ function Form() {
       };
       addMsg(newMessage);
       setText('');
-    }
-    else if(text.length===0){
-      M.toast({html: 'Unable to send blank messages'});
+    } else if (text.length === 0) {
+      M.toast({ html: 'Unable to send blank messages' });
     }
   };
 

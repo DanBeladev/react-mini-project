@@ -7,12 +7,12 @@ import CardActions from '@material-ui/core/CardActions';
 import { Button, TextField } from '@material-ui/core';
 import { AppContext } from '../contexts/AppContext';
 import M from 'materialize-css/dist/js/materialize.min.js';
-import './Profile.css'
+import './Profile.css';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '25%',
-    height:360,
+    height: 360,
     background: 'aliceblue',
     display: 'flex',
     flexDirection: 'column',
@@ -27,7 +27,6 @@ const Profile = () => {
 
   const onTyping = (event) => {
     const { value } = event.target;
-    console.log(value);
     setUserName(value);
   };
 
@@ -35,19 +34,18 @@ const Profile = () => {
     if (userName !== '') {
       changeUserName(userName);
       setUserName('');
-      M.toast({html: 'User name changed successfully'});
+      M.toast({ html: 'User name changed successfully' });
     } else {
-      M.toast({html: 'User name must be non-empty'});
-      
+      M.toast({ html: 'User name must be non-empty' });
     }
   };
 
   return (
     <AppContext.Consumer>
       {({ appState, changeUserName }) => (
-        <Card className={classes.root}>
+        <Card id='container' className={classes.root}>
           <CardHeader
-          color="orange"
+            color='orange'
             title={`${appState.userName} Profile`}
             subheader='Edit profile name here'
           />
