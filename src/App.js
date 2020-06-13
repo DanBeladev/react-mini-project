@@ -4,9 +4,9 @@ import { Box } from '@material-ui/core';
 import 'materialize-css/dist/css/materialize.min.css';
 import M from 'materialize-css/dist/js/materialize.min.js';
 import { Switch, Route, Redirect, BrowserRouter } from 'react-router-dom';
-import AppNavBar from './components/AppNavBar';
-import Home from './components/Home';
-import Profile from './components/Profile';
+import AppNavBar from './components/navbar/AppNavBar';
+import Home from './components/home/Home';
+import Profile from './components/profile/Profile';
 import { ROOT_ROUTE, HOME_ROUTE, PROFILE_ROUTE } from './constants';
 import AppContextProvider from './contexts/AppContext';
 

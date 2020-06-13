@@ -2,8 +2,8 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { useHistory } from 'react-router-dom';
 import { AppBar, Toolbar, Typography, Button } from '@material-ui/core';
-import { HOME_ROUTE, PROFILE_ROUTE } from '../constants';
-import { AppContext } from '../contexts/AppContext';
+import { HOME_ROUTE, PROFILE_ROUTE } from '../../constants';
+import { AppContext } from '../../contexts/AppContext';
 
 const useStyles = makeStyles((theme) => ({
   root: {

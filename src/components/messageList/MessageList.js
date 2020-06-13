@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core';
-import { AppContext } from '../contexts/AppContext';
-import Message from './Message';
+import { AppContext } from '../../../contexts/AppContext';
+import Message from './message/Message';
 import './MessageList.css';
 
 const useStyles = makeStyles((theme) => ({

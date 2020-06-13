@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AppContext } from '../contexts/AppContext';
+import { AppContext } from '../../../contexts/AppContext';
 import { TextField, Button, makeStyles } from '@material-ui/core';
 import M from 'materialize-css/dist/js/materialize.min.js';
 
@@ -37,10 +37,13 @@ function Form() {
 
   const onSend = (addMsg, appState) => {
     if (!isDisable && text.length !== 0) {
+      const date_t = new Date();
+      console.log(date_t);
+      console.log(new Date(date_t.getFullYear(),date_t.getMonth(),date_t.getDay(),date_t.getHours(),date_t.getMinutes()))
       const newMessage = {
         userName: appState.userName,
         text: text,
-        date: new Date(),
+        date: new Date(date_t.getFullYear(),date_t.getMonth(),date_t.getDay(),date_t.getHours(),date_t.getMinutes()),
       };
       addMsg(newMessage);
       setText('');

@@ -1,6 +1,6 @@
 import React from 'react';
-import MessageList from './MessageList';
-import Form from './Form';
+import MessageList from './messageList/MessageList';
+import Form from './form/Form';
 import { Grid, makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
