@@ -44,6 +44,8 @@ function Form() {
       };
       addMsg(newMessage);
       setText('');
+      const dummy = document.getElementById("dummy");
+      dummy.scrollIntoView();
     } else if (text.length === 0) {
       M.toast({ html: 'Unable to send blank messages' });
     }
@@ -63,6 +65,7 @@ function Form() {
               multiline
               rows={4}
               variant='outlined'
+              inputRef={input => input && input.focus()}
             />
             <Button
               className={classes.btn}

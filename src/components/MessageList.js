@@ -18,7 +18,6 @@ const useStyles = makeStyles((theme) => ({
 
 const MessageList = () => {
   const classes = useStyles();
-
   return (
     <AppContext.Consumer>
       {({ appState }) => (
@@ -26,7 +25,9 @@ const MessageList = () => {
           {appState.messages.map((msg, index) => (
             <Message key={index} data={msg} />
           ))}
-          <div id='dummy'></div>
+          <div
+            id='dummy'
+          ></div>
         </div>
       )}
     </AppContext.Consumer>
