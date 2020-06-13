@@ -28,7 +28,8 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'baseline',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    flexWrap: "wrap"
   },
 }));
 
@@ -50,7 +51,7 @@ const Message = (props) => {
       </Typography>
       <div className={classes.footer}>
         <Typography className={classes.text}>{text}</Typography>
-        <Typography className={classes.date}>{getDateString(date)}</Typography>
+        <div className={classes.date}>{getDateString(date)}</div>
       </div>
     </div>
   );
